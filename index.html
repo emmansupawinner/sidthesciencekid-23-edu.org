@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SidTheScienceKid-23-Edu.org | Portal</title>
+    <style>
+        body { background: #0f0f0f; color: #fff; font-family: 'Segoe UI', sans-serif; text-align: center; margin: 0; }
+        header { background: #1a1a1a; padding: 20px; border-bottom: 3px solid #007bff; position: sticky; top: 0; z-index: 100; }
+        #search { padding: 12px; width: 60%; border-radius: 25px; border: none; margin-top: 10px; outline: none; font-size: 16px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; padding: 40px; max-width: 1400px; margin: 0 auto; }
+        .card { background: #1e1e1e; padding: 15px; border-radius: 15px; border: 1px solid #333; transition: 0.3s; }
+        .card:hover { transform: translateY(-5px); border-color: #007bff; box-shadow: 0 5px 15px rgba(0,123,255,0.4); }
+        .card img { width: 100%; border-radius: 10px; height: 130px; object-fit: cover; }
+        .btn { display: block; margin-top: 10px; padding: 12px; background: #007bff; color: white; text-decoration: none; border-radius: 8px; font-weight: bold; }
+        h1 { font-size: 22px; letter-spacing: 1px; color: #007bff; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>SIDTHE-SCIENCE-KID-23-EDU.ORG</h1>
+    <input type="text" id="search" placeholder="Search private library..." onkeyup="filterGames()">
+</header>
+
+<div class="grid" id="gameGrid">
+    <!-- MASTER GAME LIST -->
+    <div class="card">
+        <img src="https://madkidgames.com">
+        <h3>Ultimate Car Driving</h3>
+        <a href="https://madkidgames.com" class="btn" target="_blank">Play Now</a>
+    </div>
+    <div class="card">
+        <img src="https://madkidgames.com">
+        <h3>Rocket Car Ball</h3>
+        <a href="https://madkidgames.com" class="btn" target="_blank">Play Now</a>
+    </div>
+    <div class="card">
+        <img src="https://madkidgames.com">
+        <h3>Short Life</h3>
+        <a href="https://madkidgames.com" class="btn" target="_blank">Play Now</a>
+    </div>
+    <div class="card">
+        <img src="https://madkidgames.com">
+        <h3>Security Simulator</h3>
+        <a href="https://madkidgames.com" class="btn" target="_blank">Play Now</a>
+    </div>
+    <div class="card">
+        <img src="https://madkidgames.com">
+        <h3>Parkour Jump</h3>
+        <a href="https://madkidgames.com" class="btn" target="_blank">Play Now</a>
+    </div>
+    <div class="card">
+        <img src="https://madkidgames.com">
+        <h3>Ultimate Spider Sim</h3>
+        <a href="https://madkidgames.com" class="btn" target="_blank">Play Now</a>
+    </div>
+    <div class="card">
+        <img src="https://madkidgames.com">
+        <h3>Who Wants To Be A Millionaire</h3>
+        <a href="https://madkidgames.com" class="btn" target="_blank">Play Now</a>
+    </div>
+    <div class="card">
+        <img src="https://madkidgames.com">
+        <h3>Bottle Flip 3D</h3>
+        <a href="https://madkidgames.com" class="btn" target="_blank">Play Now</a>
+    </div>
+    <div class="card">
+        <img src="https://madkidgames.com">
+        <h3>Bob The Robber 4</h3>
+        <a href="https://madkidgames.com" class="btn" target="_blank">Play Now</a>
+    </div>
+    <!-- Add remaining cards here using the same format -->
+</div>
+
+<script>
+    function filterGames() {
+        let input = document.getElementById('search').value.toLowerCase();
+        let cards = document.getElementsByClassName('card');
+        for (let i = 0; i < cards.length; i++) {
+            let title = cards[i].getElementsByTagName('h3')[0].innerText.toLowerCase();
+            cards[i].style.display = title.includes(input) ? "" : "none";
+        }
+    }
+
+    // PANIC KEY: Press ESC to hide games and switch to Wikipedia
+    document.addEventListener('keydown', function(e) {
+        if (e.key === "Escape") {
+            window.location.replace("https://wikipedia.org");
+        }
+    });
+</script>
+
+</body>
+</html>
